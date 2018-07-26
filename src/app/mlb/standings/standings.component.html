@@ -1,4 +1,4 @@
-<h2>{{title}} <small class="text-muted">last updated on: {{mySFMlbOSR?.overallteamstandings.lastUpdatedOn}}</small></h2>
+<h2>{{title}} <small class="text-muted">last updated on: {{ overallStandings?.overallteamstandings.lastUpdatedOn }}</small></h2>
 <div>
   <table class="table table-striped">
     <thead class="thead-light">
@@ -14,7 +14,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let teamInfo of mySFMlbOSR?.overallteamstandings.teamstandingsentry">
+      <tr *ngFor="let teamInfo of overallStandings?.overallteamstandings.teamstandingsentry">
         <td>{{teamInfo.team.City}} <small class="text-muted">{{teamInfo.team.Name}}</small></td>
         <td>{{teamInfo.stats.Wins['#text']}}</td>
         <td>{{teamInfo.stats.Losses['#text']}}</td>

@@ -4,7 +4,7 @@ import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
-import { MySportsFeedsMlbOverallStandingsResponse } from './mlb/MySportsFeedInterfaces';
+import { OverallStandingsRoot } from './mlb/interfaces/overall.standings';
 import { HttpErrorHandler, HandleError } from './http-error-handler.service';
 
 const httpOptions = {
@@ -26,7 +26,7 @@ export class SharedService {
   }
 
   getOverallStandings() {
-    return this.http.get<MySportsFeedsMlbOverallStandingsResponse>(this.mlbOverallStandingsUrl, httpOptions)
+    return this.http.get<OverallStandingsRoot>(this.mlbOverallStandingsUrl, httpOptions)
     .pipe(
       catchError(this.handleError('getOverallStandings', []))
     );

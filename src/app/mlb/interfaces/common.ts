@@ -1,11 +1,3 @@
-export interface MySportsFeedsMlbOverallStandingsResponse {
-    overallteamstandings: OverallTeamStandings;
-}
-export interface OverallTeamStandings {
-    lastUpdatedOn: Date;
-    teamstandingsentry: Array<TeamStandingsEntry>;
-}
-
 export interface TeamStandingsEntry {
     team: Team;
     rank: string;
