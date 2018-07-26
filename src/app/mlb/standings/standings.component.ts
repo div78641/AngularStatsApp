@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../../shared.service';
-import { OverallTeamStandings } from '../MySportsFeedInterfaces';
+import { MySportsFeedsMlbOverallStandingsResponse } from '../MySportsFeedInterfaces';
 
 @Component({
   selector: 'app-standings',
@@ -9,16 +9,15 @@ import { OverallTeamStandings } from '../MySportsFeedInterfaces';
 })
 export class StandingsComponent implements OnInit {
   title = 'MLB Standings';
-  overallStandings: OverallTeamStandings;
+  mySFMlbOSR: MySportsFeedsMlbOverallStandingsResponse;
 
   constructor(private sharedService: SharedService ) { }
 
   ngOnInit() {
     this.sharedService
       .getOverallStandings()
-      .subscribe((data: OverallTeamStandings) => {
-        this.overallStandings.lastUpdatedOn = data.lastUpdatedOn;
-        console.log(this.overallStandings);
+      .subscribe((data: MySportsFeedsMlbOverallStandingsResponse) => {
+        this.mySFMlbOSR = data;
       });
   }
 

@@ -1,6 +1,9 @@
+export interface MySportsFeedsMlbOverallStandingsResponse {
+    overallteamstandings: OverallTeamStandings;
+}
 export interface OverallTeamStandings {
-    lastUpdatedOn: string;
-    teamStandingsEntry: Array<TeamStandingsEntry>;
+    lastUpdatedOn: Date;
+    teamstandingsentry: Array<TeamStandingsEntry>;
 }
 
 export interface TeamStandingsEntry {
@@ -150,7 +153,7 @@ export interface Stats {
 }
 
 export interface StatsObject {
-    category?: string;
-    abbreviation: string;
-    text: string;
+    '@category'?: string;
+    '@abbreviation': string;
+    '#text': string;
 }
