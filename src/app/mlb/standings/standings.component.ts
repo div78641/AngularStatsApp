@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../../shared.service';
 import { OverallStandingsRoot } from '../interfaces/overall.standings';
+import { LeagueStandingsRoot } from '../interfaces/league.standings';
 
 @Component({
   selector: 'app-standings',
@@ -10,6 +11,7 @@ import { OverallStandingsRoot } from '../interfaces/overall.standings';
 export class StandingsComponent implements OnInit {
   title = 'MLB Standings';
   overallStandings: OverallStandingsRoot;
+  leagueStandings: LeagueStandingsRoot;
 
   constructor(private sharedService: SharedService ) { }
 
@@ -19,6 +21,10 @@ export class StandingsComponent implements OnInit {
       .subscribe((data: OverallStandingsRoot) => {
         this.overallStandings = data;
       });
+    this.sharedService
+      .getLeagueStandings()
+      .subscribe((leagueData: LeagueStandingsRoot) => {
+        this.leagueStandings = leagueData;
+      });
   }
-
 }

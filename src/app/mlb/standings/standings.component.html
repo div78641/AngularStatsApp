@@ -1,53 +1,64 @@
 <h2>{{title}}</h2>
-<div class="card">
-  <div class="card-header bg-primary text-white">Overall Standings</div>
+<div class="card border-primary">
+  <div class="card-header bg-primary text-white">Overall Standings <small>(last updated on: {{ overallStandings?.overallteamstandings.lastUpdatedOn }})</small></div>
   <div class="card-body">
     <table class="table table-sm table-striped table-bordered">
       <thead class="thead-light">
         <tr>
-          <th scope="col">Team Name <small class="text-muted">(Mascot)</small></th>
-          <th scope="col">W</th>
-          <th scope="col">L</th>
-          <th scope="col">PCT</th>
-          <th scope="col">GB</th>
-          <th scope="col">RS</th>
-          <th scope="col">RA</th>
-          <th scope="col">DIFF</th>
+          <th scope="col">Team City <small class="text-muted">Mascot</small></th>
+          <th class="text-center" scope="col">W</th>
+          <th class="text-center" scope="col">L</th>
+          <th class="text-right" scope="col">PCT</th>
+          <th class="text-center" scope="col">GB</th>
+          <th class="text-center" scope="col">RS</th>
+          <th class="text-center" scope="col">RA</th>
+          <th class="text-center" scope="col">DIFF</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let teamInfo of overallStandings?.overallteamstandings.teamstandingsentry">
           <td>{{teamInfo.team.City}} <small class="text-muted">{{teamInfo.team.Name}}</small></td>
-          <td>{{teamInfo.stats.Wins['#text']}}</td>
-          <td>{{teamInfo.stats.Losses['#text']}}</td>
-          <td>{{teamInfo.stats.WinPct['#text']}}</td>
-          <td>{{teamInfo.stats.GamesBack['#text']}}</td>
-          <td>{{teamInfo.stats.RunsFor['#text']}}</td>
-          <td>{{teamInfo.stats.RunsAgainst['#text']}}</td>
-          <td>{{teamInfo.stats.RunDifferential['#text']}}</td>
+          <td class="text-center">{{teamInfo.stats.Wins['#text']}}</td>
+          <td class="text-center">{{teamInfo.stats.Losses['#text']}}</td>
+          <td class="text-right">{{teamInfo.stats.WinPct['#text']}}</td>
+          <td class="text-center">{{teamInfo.stats.GamesBack['#text']}}</td>
+          <td class="text-center">{{teamInfo.stats.RunsFor['#text']}}</td>
+          <td class="text-center">{{teamInfo.stats.RunsAgainst['#text']}}</td>
+          <td class="text-center">{{teamInfo.stats.RunDifferential['#text']}}</td>
         </tr>
       </tbody>
     </table>
   </div>
-  <div class="card-footer bg-primary text-white">last updated on: {{ overallStandings?.overallteamstandings.lastUpdatedOn }}</div>
 </div>
-<div class="card bg-secondary">
-  <div class="card-header">League Standings</div>
-  <div class="card-body">
+<div class="card border-secondary">
+  <div class="card-header bg-secondary text-white">League Standings <small>(last updated on: {{leagueStandings?.conferenceteamstandings.lastUpdatedOn}})</small></div>
+  <div class="card-body" *ngFor="let conf of leagueStandings?.conferenceteamstandings.conference">
+    <h3 class="card-title">{{ conf['@name']}}</h3>
     <table class="table table-sm table-striped table-bordered">
       <thead class="thead-light">
         <tr>
-          <th scope="col">Team Name <small class="text-muted">(Mascot)</small></th>
-          <th scope="col">W</th>
-          <th scope="col">L</th>
-          <th scope="col">PCT</th>
-          <th scope="col">GB</th>
-          <th scope="col">RS</th>
-          <th scope="col">RA</th>
-          <th scope="col">DIFF</th>
+          <th scope="col">Team City <small class="text-muted">Mascot</small></th>
+          <th class="text-center" scope="col">W</th>
+          <th class="text-center" scope="col">L</th>
+          <th class="text-right" scope="col">PCT</th>
+          <th class="text-center" scope="col">GB</th>
+          <th class="text-center" scope="col">RS</th>
+          <th class="text-center" scope="col">RA</th>
+          <th class="text-center" scope="col">DIFF</th>
         </tr>
       </thead>
+      <tbody>
+        <tr *ngFor="let teamInfo of conf.teamentry">
+          <td>{{teamInfo.team.City}} <small class="text-muted">{{teamInfo.team.Name}}</small></td>
+          <td class="text-center">{{teamInfo.stats.Wins['#text']}}</td>
+          <td class="text-center">{{teamInfo.stats.Losses['#text']}}</td>
+          <td class="text-right">{{teamInfo.stats.WinPct['#text']}}</td>
+          <td class="text-center">{{teamInfo.stats.GamesBack['#text']}}</td>
+          <td class="text-center">{{teamInfo.stats.RunsFor['#text']}}</td>
+          <td class="text-center">{{teamInfo.stats.RunsAgainst['#text']}}</td>
+          <td class="text-center">{{teamInfo.stats.RunDifferential['#text']}}</td>
+        </tr>
+      </tbody>
     </table>
   </div>
-  <div class="card-footer">last updated on: </div>
 </div>
