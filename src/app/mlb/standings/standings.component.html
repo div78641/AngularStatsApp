@@ -1,5 +1,10 @@
 <h2>{{title}}</h2>
-<div class="card border-primary">
+<div>
+  <button type="button" class="btn btn-outline-primary" [class.active]="displayOverall" (click)="displayOverall = true; displayLeague = false;">Overall</button>
+  <button type="button" class="btn btn-outline-secondary" [class.active]="displayLeague" (click)="displayOverall = false; displayLeague = true;">League</button>
+</div>
+
+<div *ngIf="displayOverall" class="card border-primary">
   <div class="card-header bg-primary text-white">Overall Standings <small>(last updated on: {{ overallStandings?.overallteamstandings.lastUpdatedOn }})</small></div>
   <div class="card-body">
     <table class="table table-sm table-striped table-bordered">
@@ -30,7 +35,7 @@
     </table>
   </div>
 </div>
-<div class="card border-secondary">
+<div *ngIf="displayLeague" class="card border-secondary">
   <div class="card-header bg-secondary text-white">League Standings <small>(last updated on: {{leagueStandings?.conferenceteamstandings.lastUpdatedOn}})</small></div>
   <div class="card-body" *ngFor="let conf of leagueStandings?.conferenceteamstandings.conference">
     <h3 class="card-title">{{ conf['@name']}}</h3>

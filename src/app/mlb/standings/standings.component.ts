@@ -10,6 +10,8 @@ import { LeagueStandingsRoot } from '../interfaces/league.standings';
 })
 export class StandingsComponent implements OnInit {
   title = 'MLB Standings';
+  displayOverall = true;
+  displayLeague = false;
   overallStandings: OverallStandingsRoot;
   leagueStandings: LeagueStandingsRoot;
 
