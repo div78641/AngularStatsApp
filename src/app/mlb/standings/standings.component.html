@@ -1,8 +1,8 @@
 <h2>{{title}}</h2>
-<div>
-  <button type="button" class="btn btn-outline-primary" [class.active]="displayOverall" (click)="displayOverall = true; displayLeague = false;">Overall</button>
-  <button type="button" class="btn btn-outline-secondary" [class.active]="displayLeague" (click)="displayOverall = false; displayLeague = true;">League</button>
-</div>
+<p>
+  <button type="button" class="btn btn-outline-primary btn-sm" [class.active]="displayOverall" (click)="displayOverall = true; displayLeague = false;">Overall</button>
+  <button type="button" class="btn btn-outline-secondary btn-sm" [class.active]="displayLeague" (click)="displayOverall = false; displayLeague = true;">League</button>
+</p>
 
 <div *ngIf="displayOverall" class="card border-primary">
   <div class="card-header bg-primary text-white">Overall Standings <small>(last updated on: {{ overallStandings?.overallteamstandings.lastUpdatedOn }})</small></div>
