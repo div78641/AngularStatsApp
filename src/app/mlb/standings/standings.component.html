@@ -29,7 +29,7 @@
           <td class="text-center">{{teamInfo.stats.GamesBack['#text']}}</td>
           <td class="text-center">{{teamInfo.stats.RunsFor['#text']}}</td>
           <td class="text-center">{{teamInfo.stats.RunsAgainst['#text']}}</td>
-          <td class="text-center">{{teamInfo.stats.RunDifferential['#text']}}</td>
+          <td class="text-center" [class.text-success]="teamInfo.stats.RunDifferential['#text'] &gt; 0" [class.text-danger]="teamInfo.stats.RunDifferential['#text'] &lt; 0">{{teamInfo.stats.RunDifferential['#text']}}</td>
         </tr>
       </tbody>
     </table>
@@ -61,7 +61,7 @@
           <td class="text-center">{{teamInfo.stats.GamesBack['#text']}}</td>
           <td class="text-center">{{teamInfo.stats.RunsFor['#text']}}</td>
           <td class="text-center">{{teamInfo.stats.RunsAgainst['#text']}}</td>
-          <td class="text-center">{{teamInfo.stats.RunDifferential['#text']}}</td>
+          <td class="text-center" [class.text-success]="teamInfo.stats.RunDifferential['#text'] &gt; 0" [class.text-danger]="teamInfo.stats.RunDifferential['#text'] &lt; 0">{{teamInfo.stats.RunDifferential['#text']}}</td>
         </tr>
       </tbody>
     </table>
