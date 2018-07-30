@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService } from '../../shared.service';
+import { OverallStandingsRoot } from '../interfaces/overall.standings';
 
 @Component({
   selector: 'app-runsperhit',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./runsperhit.component.css']
 })
 export class RunsperhitComponent implements OnInit {
+  overallStandings: OverallStandingsRoot;
 
-  constructor() { }
+  constructor(private sharedService: SharedService) { }
 
   ngOnInit() {
+    this.sharedService
+    .getSpecificStats('h,r,inn', 'stats.r.d')
+    .subscribe((data: OverallStandingsRoot) => {
+      this.overallStandings = data;
+    });
   }
-
 }
