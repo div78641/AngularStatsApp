@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../../shared.service';
 import { OverallStandingsRoot } from '../interfaces/overall.standings';
+import { SortableColumnComponent } from '../../ui/sortable-column/sortable-column.component';
 
 @Component({
   selector: 'app-runsperhit',
@@ -9,6 +10,7 @@ import { OverallStandingsRoot } from '../interfaces/overall.standings';
 })
 export class RunsperhitComponent implements OnInit {
   overallStandings: OverallStandingsRoot;
+  sortableColumn: SortableColumnComponent;
 
   constructor(private sharedService: SharedService) { }
 
