@@ -5,13 +5,12 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LayoutComponent } from './layout/layout.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { SortableColumnComponent } from './sortable-column/sortable-column.component';
 
 @NgModule({
   imports: [
     CommonModule, RouterModule, FontAwesomeModule
   ],
-  declarations: [LayoutComponent, HeaderComponent, FooterComponent, SortableColumnComponent],
+  declarations: [LayoutComponent, HeaderComponent, FooterComponent],
   exports: [LayoutComponent]
 })
 export class UiModule { }

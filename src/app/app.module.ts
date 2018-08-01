@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppComponent } from './app.component';
 import { UiModule } from './ui/ui.module';
@@ -17,11 +18,12 @@ import { MessageService } from './message.service';
   declarations: [
     AppComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    FontAwesomeModule,
     UiModule,
     MlbModule,
     CONST_ROUTING
