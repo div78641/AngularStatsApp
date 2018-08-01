@@ -1,11 +1,51 @@
 <h2>MLB Teams Runs/Hit</h2>
 <div class="card border-primary">
-  <div class="card-header bg-primary text-white">Teams <small>(last updated on: {{ overallStandings?.overallteamstandings.lastUpdatedOn }})</small></div>
+  <div class="card-header bg-primary text-white">Teams
+    <small>(last updated on: {{ overallStandings?.overallteamstandings.lastUpdatedOn }})</small>
+  </div>
   <div class="card-body">
+    <table mat-table [dataSource]="overallStandings?.overallteamstandings.teamstandingsentry" class="mat-elevation-z8">
+      <ng-container matColumnDef="teamRank">
+        <th mat-header-cell *matHeaderCellDef>Rank</th>
+        <td mat-cell *matCellDef="let teamInfo">{{teamInfo.rank}}</td>
+      </ng-container>
+      <ng-container matColumnDef="teamName">
+        <th mat-header-cell *matHeaderCellDef>Team City
+          <small class="text-muted">Mascot</small>
+        </th>
+        <td mat-cell *matCellDef="let teamInfo">{{teamInfo.team.City}}
+          <small class="text-muted">{{teamInfo.team.Name}}</small>
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="teamGames">
+        <th mat-header-cell *matHeaderCellDef>G</th>
+        <td mat-cell *matCellDef="let teamInfo">{{teamInfo.stats.GamesPlayed['#text']}}</td>
+      </ng-container>
+      <ng-container matColumnDef="teamRuns">
+        <th mat-header-cell *matHeaderCellDef>R</th>
+        <td mat-cell *matCellDef="let teamInfo">{{teamInfo.stats.Runs['#text']}}</td>
+      </ng-container>
+      <ng-container matColumnDef="teamHits">
+        <th mat-header-cell *matHeaderCellDef>H</th>
+        <td mat-cell *matCellDef="let teamInfo">{{teamInfo.stats.Hits['#text']}}</td>
+      </ng-container>
+      <ng-container matColumnDef="teamRunsPerHit">
+        <th mat-header-cell *matHeaderCellDef>R/H</th>
+        <td mat-cell *matCellDef="let teamInfo">{{teamInfo.stats.Runs['#text'] / teamInfo.stats.Hits['#text'] | number: '1.3-3'}}</td>
+      </ng-container>
+      <ng-container matColumnDef="teamHitsPerRun">
+        <th mat-header-cell *matHeaderCellDef>H/R</th>
+        <td mat-cell *matCellDef="let teamInfo">{{teamInfo.stats.Hits['#text'] / teamInfo.stats.Runs['#text'] | number: '1.3-3'}}</td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="['teamRank', 'teamName', 'teamGames', 'teamRuns', 'teamHits', 'teamRunsPerHit', 'teamHitsPerRun']" class="thead-light"></tr>
+      <tr mat-row *matRowDef="let row; columns: ['teamRank', 'teamName', 'teamGames', 'teamRuns', 'teamHits', 'teamRunsPerHit', 'teamHitsPerRun'];"></tr>
+    </table>
     <table class="table table-sm table-striped table-bordered">
       <thead class="thead-light">
         <tr>
-          <th scope="col">Team City <small class="text-muted">Mascot</small></th>
+          <th scope="col">Team City
+            <small class="text-muted">Mascot</small>
+          </th>
           <th class="text-center" scope="col">G</th>
           <th class="text-center" scope="col">R</th>
           <th class="text-center" scope="col">H</th>
@@ -15,7 +55,9 @@
       </thead>
       <tbody>
         <tr *ngFor="let teamInfo of overallStandings?.overallteamstandings.teamstandingsentry">
-          <td>{{teamInfo.team.City}} <small class="text-muted">{{teamInfo.team.Name}}</small></td>
+          <td>{{teamInfo.team.City}}
+            <small class="text-muted">{{teamInfo.team.Name}}</small>
+          </td>
           <td class="text-center">{{teamInfo.stats.GamesPlayed['#text']}}</td>
           <td class="text-center">{{teamInfo.stats.Runs['#text']}}</td>
           <td class="text-center">{{teamInfo.stats.Hits['#text']}}</td>
