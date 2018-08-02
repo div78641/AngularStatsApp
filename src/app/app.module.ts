@@ -2,9 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { MatTableModule } from '@angular/material/table';
-import { MatSortModule } from '@angular/material/sort';
 
 import { AppComponent } from './app.component';
 import { UiModule } from './ui/ui.module';
@@ -27,9 +24,6 @@ import { MessageService } from './message.service';
     BrowserModule,
     HttpClientModule,
     FontAwesomeModule,
-    NoopAnimationsModule,
-    MatTableModule,
-    MatSortModule,
     UiModule,
     MlbModule,
     CONST_ROUTING
