@@ -38,8 +38,15 @@ export class SharedService {
       catchError(this.handleError('getLeagueStandings', []))
     );
   }
-  getSpecificStats(statList: string, sortBy: string) {
+  getSpecificStatsSorted(statList: string, sortBy: string) {
     const statUrl = `${this.mlbOverallStandingsUrl}?teamstats=${statList}&sort=${sortBy}`;
+    return this.http.get<OverallStandingsRoot>(statUrl, httpOptions)
+    .pipe(
+      catchError(this.handleError('getSpecificStats', []))
+    );
+  }
+  getSpecificStats(statList: string) {
+    const statUrl = `${this.mlbOverallStandingsUrl}?teamstats=${statList}`;
     return this.http.get<OverallStandingsRoot>(statUrl, httpOptions)
     .pipe(
       catchError(this.handleError('getSpecificStats', []))

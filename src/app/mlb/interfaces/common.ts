@@ -1,6 +1,6 @@
 export interface TeamStandingsEntry {
     team: Team;
-    rank: string;
+    rank: number;
     stats: Stats;
 }
 
