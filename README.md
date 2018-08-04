@@ -1,27 +1,19 @@
 # StatsApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+StatsApp was started as an exercised to accomplish two things:
+* Answer the question: Are the 2018 Orioles the worst team in Major League Baseball when it comes to the number of runs scored per hit? (Interestingly this turned out to be no althought it feels like they need to get a lot more hits than all the other teams in order to score runs) And,
+* Help me become more familiar with the Angular framework.
 
-## Development server
+## How We Arrived Here
+In order to answer the first question, I needed some way to get the stats into an application and crunch them. In researching the where questions, I found [MySportsFeeds](https://www.mysportsfeeds.com/). If you are looking for a way to do something with sports data, they are a good choice.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+I wanted to do this application quickly, so I thought of Angular and used [VS Code](https://code.visualstudio.com/).
 
-## Code scaffolding
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8. And updated to the latest version of the Angular CLI during the course of development. To do the table sorting, I chose [Angular Material's data table](https://material.angular.io/components/table/overview) and while that turned into a bigger challenge than I realised when choosing that technology, I did learn a lot. 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Future Direction
+I may add takes on the stats from the NHL, NFL and NBA.
 
-## Build
+I will eventually upgrade to version 2 of MySportsFeeds.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Possible updates due to Angular and Angular Material improvements. 
