@@ -12,6 +12,7 @@ import { MatSort, MatTableDataSource } from '@angular/material';
 export class RunsperhitComponent implements OnInit {
   overallStandings: OverallStandingsRoot;
   materialDataSource: MatTableDataSource<TeamStandingsEntry>;
+  isLoadingResults = true;
 
   @ViewChild(MatSort) sort: MatSort;
 
@@ -36,6 +37,7 @@ export class RunsperhitComponent implements OnInit {
         }
       };
       this.materialDataSource.sort = this.sort;
+      this.isLoadingResults = false;
     });
   }
 }
