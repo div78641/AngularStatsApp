@@ -5,12 +5,13 @@ import { MatTableModule, MatSortModule, MatProgressSpinnerModule } from '@angula
 
 import { StandingsComponent } from './standings/standings.component';
 import { RunsperhitComponent } from './runsperhit/runsperhit.component';
+import { GamelogComponent } from './gamelog/gamelog.component';
 
 @NgModule({
   imports: [
     CommonModule, BrowserAnimationsModule, MatTableModule, MatSortModule, MatProgressSpinnerModule
   ],
-  declarations: [StandingsComponent, RunsperhitComponent],
-  exports: [StandingsComponent, RunsperhitComponent]
+  declarations: [StandingsComponent, RunsperhitComponent, GamelogComponent],
+  exports: [StandingsComponent, RunsperhitComponent, GamelogComponent]
 })
 export class MlbModule { }

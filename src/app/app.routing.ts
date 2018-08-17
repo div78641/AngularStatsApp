@@ -3,6 +3,7 @@ import { AboutComponent } from './about.component';
 import { ContactComponent } from './contact.component';
 import { StandingsComponent } from './mlb/standings/standings.component';
 import { RunsperhitComponent } from './mlb/runsperhit/runsperhit.component';
+import { GamelogComponent } from './mlb/gamelog/gamelog.component';
 
 const MAINMENU_ROUTES: Routes = [
     // full : makes sure the path is absolute path
@@ -11,6 +12,7 @@ const MAINMENU_ROUTES: Routes = [
     { path: 'contact', component: ContactComponent },
     { path: 'mlb', redirectTo: '/', pathMatch: 'full' },
     { path: 'mlb/standings', component: StandingsComponent },
+    { path: 'mlb/gamelog', component: GamelogComponent },
     { path: 'mlb/runsperhit', component: RunsperhitComponent }
 ];
 export const CONST_ROUTING = RouterModule.forRoot(MAINMENU_ROUTES);
