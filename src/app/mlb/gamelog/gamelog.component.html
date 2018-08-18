@@ -1,6 +1,34 @@
-<h2>2018 Regular Season Game Log for </h2>
+<h2>2018 Regular Season Game Log for the {{gameLog?.teamgamelogs.gamelogs[0].team.Name}}</h2>
+<p><em>Log last updated on: {{gameLog?.teamgamelogs.lastUpdatedOn}}</em></p>
 <div>
-  <div class="loadingShade">
-    <fa-icon [icon]="faSync" [spin]="true" class="text-warning" title="Loading..."></fa-icon>
+  <div class="loadingShade" *ngIf="isLoadingResults">
+    <fa-icon [icon]="faSync" [spin]="true" class="text-warning h2" title="Loading..."></fa-icon>
+  </div>
+  <div>
+    <table class="table table-sm table-striped table-bordered">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">Date <small class="text-muted">(Time)</small></th>
+          <th class="text-center" scope="col">Home Team</th>
+          <th class="text-center" scope="col">Visitors</th>
+          <th class="text-right" scope="col">Result (W/L)</th>
+          <th class="text-center" scope="col">Innings</th>
+          <th class="text-center" scope="col">RS</th>
+          <th class="text-center" scope="col">RA</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let gameInfo of gameLog?.teamgamelogs.gamelogs">
+          <td>{{gameInfo.game.date | date : mediumDate}} <small class="text-muted">{{gameInfo.game.time}}</small></td>
+          <td class="text-center">{{gameInfo.game.homeTeam.Name}}</td>
+          <td class="text-center">{{gameInfo.game.awayTeam.Name}}</td>
+          <td *ngIf="gameInfo.stats.Wins['#text'] == 1" class="text-center text-success">{{gameInfo.stats.Wins['@abbreviation']}}</td>
+          <td *ngIf="gameInfo.stats.Losses['#text'] == 1" class="text-center text-danger">{{gameInfo.stats.Losses['@abbreviation']}}</td>
+          <td class="text-center">{{gameInfo.stats.InningsPlayed['#text']}}</td>
+          <td class="text-center">{{gameInfo.stats.RunsFor['#text']}}</td>
+          <td class="text-center">{{gameInfo.stats.RunsAgainst['#text']}}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
