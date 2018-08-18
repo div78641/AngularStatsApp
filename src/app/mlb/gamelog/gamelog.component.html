@@ -12,9 +12,9 @@
           <th class="text-center" scope="col">Home Team</th>
           <th class="text-center" scope="col">Visitors</th>
           <th class="text-right" scope="col">Result (W/L)</th>
-          <th class="text-center" scope="col">Innings</th>
           <th class="text-center" scope="col">RS</th>
           <th class="text-center" scope="col">RA</th>
+          <th class="text-center" scope="col">Innings</th>
         </tr>
       </thead>
       <tbody>
@@ -24,9 +24,9 @@
           <td class="text-center">{{gameInfo.game.awayTeam.Name}}</td>
           <td *ngIf="gameInfo.stats.Wins['#text'] == 1" class="text-center text-success">{{gameInfo.stats.Wins['@abbreviation']}}</td>
           <td *ngIf="gameInfo.stats.Losses['#text'] == 1" class="text-center text-danger">{{gameInfo.stats.Losses['@abbreviation']}}</td>
-          <td class="text-center">{{gameInfo.stats.InningsPlayed['#text']}}</td>
           <td class="text-center">{{gameInfo.stats.RunsFor['#text']}}</td>
           <td class="text-center">{{gameInfo.stats.RunsAgainst['#text']}}</td>
+          <td class="text-center">{{gameInfo.stats.InningsPlayed['#text']}}</td>
         </tr>
       </tbody>
     </table>
