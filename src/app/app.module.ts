@@ -10,10 +10,6 @@ import { ContactComponent } from './contact.component';
 import { MlbModule } from './mlb/mlb.module';
 import { CONST_ROUTING } from './app.routing';
 
-import { SharedService } from './shared.service';
-import { HttpErrorHandler } from './http-error-handler.service';
-import { MessageService } from './message.service';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +24,6 @@ import { MessageService } from './message.service';
     MlbModule,
     CONST_ROUTING
   ],
-  providers: [SharedService, HttpErrorHandler, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
