@@ -7,10 +7,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { StandingsComponent } from './standings/standings.component';
 import { RunsperhitComponent } from './runsperhit/runsperhit.component';
 import { GamelogComponent } from './gamelog/gamelog.component';
+import { MlbRoutingModule } from './/mlb-routing.module';
 
 @NgModule({
   imports: [
-    CommonModule, BrowserAnimationsModule, MatTableModule, MatSortModule, MatProgressSpinnerModule, FontAwesomeModule
+    CommonModule, BrowserAnimationsModule, MatTableModule, MatSortModule, MatProgressSpinnerModule, FontAwesomeModule, MlbRoutingModule
   ],
   declarations: [StandingsComponent, RunsperhitComponent, GamelogComponent],
   exports: [StandingsComponent, RunsperhitComponent, GamelogComponent]

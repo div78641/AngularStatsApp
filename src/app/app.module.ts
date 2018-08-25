@@ -8,7 +8,7 @@ import { UiModule } from './ui/ui.module';
 import { AboutComponent } from './about.component';
 import { ContactComponent } from './contact.component';
 import { MlbModule } from './mlb/mlb.module';
-import { CONST_ROUTING } from './app.routing';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,7 @@ import { CONST_ROUTING } from './app.routing';
     FontAwesomeModule,
     UiModule,
     MlbModule,
-    CONST_ROUTING
+    AppRoutingModule
   ],
   bootstrap: [AppComponent]
 })
