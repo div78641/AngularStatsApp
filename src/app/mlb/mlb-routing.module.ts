@@ -8,7 +8,7 @@ import { GamelogComponent } from './gamelog/gamelog.component';
 @NgModule({
   imports: [
     RouterModule.forChild([
-      { path: 'mlb', redirectTo: '/', pathMatch: 'full' },
+      { path: 'mlb', redirectTo: 'home', pathMatch: 'full' },
       { path: 'mlb/standings', component: StandingsComponent },
       { path: 'mlb/gamelog', component: GamelogComponent },
       { path: 'mlb/runsperhit', component: RunsperhitComponent }
