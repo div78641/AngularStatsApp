@@ -45,31 +45,5 @@
         </table>
       </div>
     </div>
-    <table class="table table-sm table-striped table-bordered">
-      <thead class="thead-light">
-        <tr>
-          <th scope="col">Team City
-            <small class="text-muted">Mascot</small>
-          </th>
-          <th class="text-center" scope="col">G</th>
-          <th class="text-center" scope="col">R</th>
-          <th class="text-center" scope="col">H</th>
-          <th class="text-center" scope="col">R/H</th>
-          <th class="text-center" scope="col">H/R</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let teamInfo of overallStandings?.overallteamstandings.teamstandingsentry">
-          <td>{{teamInfo.team.City}}
-            <small class="text-muted">{{teamInfo.team.Name}}</small>
-          </td>
-          <td class="text-center">{{teamInfo.stats.GamesPlayed['#text']}}</td>
-          <td class="text-center">{{teamInfo.stats.Runs['#text']}}</td>
-          <td class="text-center">{{teamInfo.stats.Hits['#text']}}</td>
-          <td class="text-center">{{teamInfo.stats.Runs['#text'] / teamInfo.stats.Hits['#text'] | number: '1.3-3'}}</td>
-          <td class="text-center">{{teamInfo.stats.Hits['#text'] / teamInfo.stats.Runs['#text'] | number: '1.3-3'}}</td>
-        </tr>
-      </tbody>
-    </table>
   </div>
 </div>
