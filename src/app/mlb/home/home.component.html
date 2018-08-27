@@ -1,3 +1,11 @@
-<p>
-  MLB home works!
-</p>
+<h1>MLB Stats</h1>
+<dl>
+  <dt><a [routerLink]="['/mlb/gamelog']">Game Log</a></dt>
+  <dd>Game log for an MLB team. Currently hard-coded to the regular season for the 2018 Baltimore Orioles.</dd>
+  <dt><a [routerLink]="['/mlb/runsperhit']">Runs Per Hit</a></dt>
+  <dd>Report of all 30 MLB teams, initially sorted by overall standings, that lists each team's runs, hits, and two computted
+    columns (Runs per Hit and Hits per Run). Currently for the 2018 regular season.
+  </dd>
+  <dt><a [routerLink]="['/mlb/standings']">Standings</a></dt>
+  <dd>Overall and league standings. Only supports the 2018 regular season at this point. </dd>
+</dl>
