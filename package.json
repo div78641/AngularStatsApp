@@ -34,7 +34,7 @@
     "core-js": "^2.6.9",
     "hawk": "^7.0.10",
     "hoek": "^5.0.4",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "log4js": "^3.0.6",
     "loggly": "github:winstonjs/node-loggly#pull/79/head",
     "popper.js": "^1.15.0",
