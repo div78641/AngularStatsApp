@@ -24,6 +24,9 @@
 !.vscode/launch.json
 !.vscode/extensions.json
 
+# Visual Studio 2015/2017 cache/options directory
+.vs/
+
 # misc
 /.sass-cache
 /connect.lock
@@ -33,6 +36,7 @@ npm-debug.log
 yarn-error.log
 testem.log
 /typings
+*.stackdump
 
 # System Files
 .DS_Store
